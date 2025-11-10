@@ -1,0 +1,48 @@
+ <!DOCTYPE html> <!-- HTML5 belgesi -->
+<html lang="tr"> <!-- Sayfa dili Türkçe -->
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyum -->
+    <title>Lezzet Durağı | Bize Ulaşın</title> <!-- Tarayıcı sekme başlığı -->
+    <link rel="stylesheet" href="style.css"> <!-- Ortak CSS dosyası -->
+</head>
+
+<body>
+    <!-- Üst menü -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="menu.html">Menü</a>
+            <a href="#adresimiz">Adresimiz</a>
+        </nav>
+    </header>
+
+    <!-- İletişim formu -->
+    <main>
+        <div class="contact-container"> <!-- Form kapsayıcı -->
+            <h1>Bize Ulaşın</h1> <!-- Başlık -->
+            <p>Görüşlerinizi bizimle paylaşın!</p>
+
+            <form action="mailto:tugceeymisim@gmail.com" method="post" enctype="text/plain"> 
+                <!-- mailto ile form gönderimi (backend olmadan) -->
+
+                <label for="name">Adınız:</label> <!-- İsim alanı etiketi -->
+                <input type="text" id="name" name="name" placeholder="Adınızı girin" required>
+
+                <label for="email">E-posta:</label> <!-- E-posta etiketi -->
+                <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+
+                <label for="message">Mesajınız:</label> <!-- Mesaj alanı etiketi -->
+                <textarea id="message" name="message" rows="5" placeholder="Mesajınızı buraya yazın..." required></textarea>
+
+                <button type="submit">Gönder</button> <!-- Gönder butonu -->
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="margin-top:200px;">
+        <p>© 2025 Lezzet Durağı | Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

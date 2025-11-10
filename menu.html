@@ -1,0 +1,121 @@
+<!DOCTYPE html> <!-- HTML5 belgesi olduğunu belirtir -->
+<html lang="tr"> <!-- Sayfa dilini Türkçe olarak ayarladık -->
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyum -->
+    <title>Lezzet Durağı | Menü</title> <!-- Sekmede görünen başlık -->
+    <link rel="stylesheet" href="style.css"> <!-- Ortak CSS dosyası -->
+</head>
+
+<body>
+    <!-- Üst menü (navbar) -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Ana Sayfa</a> <!-- Geri dönüş bağlantısı -->
+            <a href="" onclick="adres()">Adresimiz</a> <!-- Henüz sayfa içi bağlantı -->
+            <script>function adres() { alert("Çınar, Atatürk Cd. No:7, 15800 Ağlasun/Burdur");} </script>
+            <a href="bizeulasin.html">Bize Ulaşın</a>
+        </nav>
+    </header>
+
+    <!-- Menü içeriği -->
+    <main>
+        <div class="menu-container"> <!-- Menü ana kapsayıcı -->
+            <h1>YİYECEKLERİMİZ</h1> <!-- Başlık -->
+            <p>Yiyecek çeşitlerimiz</p> <!-- Alt açıklama -->
+
+            <div class="menu-grid"> <!-- çeşitleri ızgara düzeninde gösterir -->
+                <!-- Her yemek için bir kart -->
+                <div class="menu-item">
+                    <img src="Resimler/ızgara.jpg" alt="Izgara Köfte">
+                    <h3>Izgara Köfte</h3>
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/tavuksis.webp" alt="Tavuk Şiş">
+                    <h3>Tavuk Şiş</h3>
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/pide.jpg" alt="Pide">
+                    <h3>Karışık Pide</h3>
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/pizza.jpg" alt="Pizza">
+                    <h3>Pizza</h3>
+
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/kebap.jpg" alt="Kebap">
+                    <h3>Kebap</h3>
+
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/doner.png" alt="Döner">
+                    <h3>Döner</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+<div class="menu-container"> <!-- Menü ana kapsayıcı -->
+            <h1>İçeceklerimiz</h1> <!-- Başlık -->
+            <p>İçecek çeşitlerimiz</p> <!-- Alt açıklama -->
+
+            <div class="menu-grid"> <!-- çeşitleri ızgara düzeninde gösterir -->
+                <!-- Her yemek için bir kart -->
+                <div class="menu-item">
+                    <img src="Resimler/kola.jpg" alt="Kola">
+                    <h3>Kola</h3>
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/ayran.webp" alt="Ayran">
+                    <h3>Ayran</h3>
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/kahve.jpg" alt="Kahve">
+                    <h3>Kahve</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="menu-container"> <!-- Menü ana kapsayıcı -->
+            <h1>Tatlılarımız</h1> <!-- Başlık -->
+            <p>Tatlı çeşitlerimiz</p> <!-- Alt açıklama -->
+
+            <div class="menu-grid"> <!-- çeşitleri ızgara düzeninde gösterir -->
+                <!-- Her yemek için bir kart -->
+                <div class="menu-item">
+                    <img src="Resimler/sütlaç.webp" alt="Sütlaç">
+                    <h3>Trileçe</h3>
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/profiterol.jpg" alt="Profiterol">
+                    <h3>Profiterol</h3>
+                </div>
+
+                <div class="menu-item">
+                    <img src="Resimler/trileçe.jpg" alt="Trileçe">
+                    <h3>Trileçe</h3>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Lezzet Durağı | Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

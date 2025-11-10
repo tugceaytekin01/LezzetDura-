@@ -1,0 +1,35 @@
+<!DOCTYPE html> <!-- HTML5 belgesi olduğunu belirtir -->
+<html lang="tr"> <!-- Sayfa dilini Türkçe olarak ayarlıyoruz -->
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumluluk sağlar -->
+    <title>Lezzet Durağı | Ana Sayfa</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="style.css"> <!-- Harici CSS dosyasını bağlıyoruz -->
+</head>
+
+<body>
+    <!-- Üst menü bölümü -->
+    <header>
+        <nav class="navbar"> <!-- Navigasyon (menü çubuğu) -->
+            <a href="" onclick="adres()">Adresimiz</a> <!-- Henüz sayfa içi bağlantı -->
+            <script>function adres() { alert("Çınar, Atatürk Cd. No:7, 15800 Ağlasun/Burdur");} </script>
+            <a href="bizeulasin.html">Bize Ulaşın</a> <!-- İletişim sayfasına gidecek -->
+            <a href="yorum.html">Yorumlar</a> <!-- Yorumlar sayfasına gidecek -->
+        </nav>
+    </header>
+
+    <!-- Orta bölüm: karşılama ve menü butonu -->
+    <main>
+        <div class="hero"> <!-- Ana içerik alanı -->
+            <h1>Hoş Geldiniz</h1> <!-- Başlık -->
+            <p>Lezzetin en zarif durağında...</p> <!-- Alt yazı -->
+            <a href="menu.html" class="menu-btn">Menü</a> <!-- Menü sayfasına yönlendiren buton -->
+        </div>
+    </main>
+
+    <!-- Alt bilgi (footer) -->
+    <footer style="margin-top: 590px;">
+        <p>© 2025 Lezzet Durağı | Tüm hakları saklıdır.</p> <!-- Telif metni -->
+    </footer>
+</body>
+</html>

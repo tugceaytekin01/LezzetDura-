@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yorumlar</title>
+
+  <style>
+    /* Sayfanın temel görünümü ayarlanıyor */
+    body {
+      margin: 0;
+      height: 100vh; /* sayfanın tamamını kapsar */
+      display: flex; /* kutuyu ortalamak için flexbox kullanıldı */
+      justify-content: center; /* yatay ortalama */
+      align-items: center; /* dikey ortalama */
+      background: linear-gradient(135deg, #f3e9dc, #e8d9c4); /* bej tonlarında arka plan */
+      font-family: 'Poppins', sans-serif;
+      color: #4a3623;
+    }
+
+    /* 🍮 Ana yorum kutusu */
+    .comment-box {
+      width: 600px; /* kutunun genişliği */
+      background: #fffaf2; /* açık bej arka plan */
+      border-radius: 20px; /* yumuşak köşeler */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* gölge efekti */
+      padding: 40px;
+      text-align: center; /* içeriği ortalar */
+      animation: fadeIn 0.8s ease; /* sayfa açılırken yumuşak animasyon */
+    }
+
+    /* 🎞️ Kutunun fade-in animasyonu */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* 📝 Başlık */
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      color: #6b4f3a;
+    }
+
+    /* 🧾 Giriş alanları */
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border: none; /* kenarlık kaldırıldı */
+      border-radius: 10px;
+      background: #f5ede0;
+      font-size: 15px;
+      outline: none; /* tıklayınca mavi çerçeve olmaz */
+      transition: 0.3s; /* geçiş efekti */
+    }
+
+    /* 🔍 Giriş alanı odakta iken */
+    input:focus, textarea:focus {
+      background: #f0e6d8;
+      box-shadow: 0 0 0 2px #d3bfa4;
+    }
+
+    /* 🚀 Gönder butonu */
+    button {
+      margin-top: 15px;
+      background: #d1a774; /* kahverengimsi bej ton */
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /* Butonun üstüne gelince efekti */
+    button:hover {
+      background: #b98d5f;
+      transform: scale(1.03);
+    }
+
+    /* 💬 Her yorumun kutusu */
+    .comment {
+      background: #fff4e4;
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 15px;
+      text-align: left;
+      animation: fadeIn 0.4s ease;
+    }
+
+    /* Yorum yazan kişinin adı */
+    .comment strong {
+      color: #6b4f3a;
+      font-size: 16px;
+    }
+
+    /* Yorum metni */
+    .comment p {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #3f2c1d;
+    }
+
+    /* Yorum tarihi */
+    .comment small {
+      color: #8c7a5a;
+      font-size: 12px;
+    }
+
+    /* 📜 Yorumlar kutusunun kendisi (scroll'lu alan) */
+    #comments {
+      margin-top: 20px;
+      max-height: 250px; /* yorumlar taşarsa kaydırılabilir olur */
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    /* Scroll barı (kaydırma çubuğu) daha zarif hale getiriyoruz */
+    #comments::-webkit-scrollbar {
+      width: 6px;
+    }
+    #comments::-webkit-scrollbar-thumb {
+      background: #d1a774;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 🍽️ Yorum kutusunun ana yapısı -->
+  <div class="comment-box">
+   
+
+
+    <a href="index.html">ANA SAYFA</a> <!-- ana sayfaya gidecek -->
+
+
+     <h2>🍮 Misafir Yorumları</h2>
+
+    <!-- İsim alanı -->
+    <input type="text" id="name" placeholder="İsmin (isteğe bağlı)">
+    <!-- Yorum metin alanı -->
+    <textarea id="message" rows="4" placeholder="Yorumunu yaz..."></textarea>
+    <!-- Gönder butonu -->
+    <button onclick="addComment()">Gönder</button>
+
+    <!-- Yorumların listeleneceği alan -->
+    <div id="comments"></div>
+  </div>
+
+  <script>
+    // 💬 HTML'deki yorum alanını değişkene atıyoruz
+    const commentsDiv = document.getElementById("comments");
+
+    // 📦 LocalStorage'dan eski yorumları çekiyoruz (yoksa boş dizi)
+    let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+    // Sayfa açıldığında yorumları göster
+    renderComments();
+
+    // ✍️ Yeni yorum ekleme fonksiyonu
+    function addComment() {
+      const name = document.getElementById("name").value || "Anonim"; // isim boşsa Anonim yaz
+      const message = document.getElementById("message").value.trim(); // boşlukları temizle
+
+      if (!message) return alert("Yorum boş olamaz!"); // Boşsa uyarı ver
+
+      // Yeni yorum objesi oluştur
+      const newComment = {
+        name,
+        message,
+        date: new Date().toLocaleString("tr-TR") // yorum tarihi
+      };
+
+      comments.push(newComment); // diziye ekle
+
+      // LocalStorage’a kaydet (stringe çevirerek)
+      localStorage.setItem("comments", JSON.stringify(comments));
+
+      // Yorum kutusunu temizle
+      document.getElementById("message").value = "";
+
+      // Güncel yorumları yeniden göster
+      renderComments();
+    }
+
+    // 🔁 Yorumları ekrana yazdırma fonksiyonu
+    function renderComments() {
+      commentsDiv.innerHTML = ""; // eski yorumları temizle
+
+      comments.forEach(c => {
+        const div = document.createElement("div"); // yeni div oluştur
+        div.classList.add("comment"); // yorum stilini ekle
+        // Yorum içeriğini oluştur
+        div.innerHTML = `
+          <strong>${c.name}</strong>
+          <p>${c.message}</p>
+          <small>${c.date}</small>
+        `;
+        commentsDiv.appendChild(div); // HTML'e ekle
+      });
+    }
+  </script>
+</body>
+</html>

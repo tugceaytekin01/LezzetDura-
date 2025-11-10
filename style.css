@@ -1,0 +1,199 @@
+ /* ---- GENEL AYARLAR ---- */
+body {
+    margin: 0; /* Sayfa kenar boşluklarını sıfırlar */
+    font-family: 'Poppins', sans-serif; /* Yazı tipi */
+    background-color: #f9f4ec; /* Krem arka plan rengi */
+    color: #3d2b1f; /* Yazı rengi (kahverengi ton) */
+    background-image: url('Resimler/İndex-arka-plan.png'); /* Arka plan deseni */
+    background-size: cover; /* Arka planı kapsar */
+    background-attachment: fixed; /* Arka plan sabit kalır */
+}
+    
+
+/* ---- NAVBAR (ÜST MENÜ) ---- */
+.navbar {
+    display: flex; /* Butonları yan yana dizer */
+    justify-content: center; /* Ortalar */
+    gap: 40px; /* Butonlar arası boşluk */
+    padding: 20px; /* İç boşluk */
+    background-color: #fff7e6; /* Daha açık krem zemin */
+    border-bottom: 2px solid #e3c7a5; /* Alt çizgi */
+}
+
+.navbar a {
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: #3d2b1f; /* Yazı rengi */
+    font-weight: 600; /* Kalın yazı */
+    transition: all 0.3s ease; /* Hover geçişi yumuşatır */
+}
+
+.navbar a:hover {
+    color: #a37849; /* Üzerine gelince renk değişir */
+}
+
+/* ---- ANA KISIM (ORTA BÖLÜM) ---- */
+.hero {
+    text-align: center; /* Ortalar */
+    margin-top: 100px; /* Üstten boşluk */
+}
+
+.hero h1 {
+    font-size: 48px; /* Başlık boyutu */
+    margin-bottom: 10px; /* Alt boşluk */
+    color: #4a3623; /* Başlık rengi */
+}
+
+.hero p {
+    font-size: 20px; /* Alt metin boyutu */
+    margin-bottom: 40px; /* Butonla aradaki boşluk */
+    color: #6b4f3a; /* Alt metin rengi */
+}
+
+/* ---- MENÜ BUTONU ---- */
+.menu-btn {
+    display: inline-block; /* Buton gibi davranır */
+    padding: 15px 40px; /* İç boşluk */
+    background-color: #d9b88f; /* Kremle uyumlu altın ton */
+    color: white; /* Yazı rengi */
+    font-size: 18px; /* Yazı boyutu */
+    font-weight: 600; /* Yazı kalınlığı */
+    border-radius: 8px; /* Köşeleri yumuşatır */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    transition: all 0.3s ease; /* Yumuşak hover geçişi */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Hafif gölge efekti */
+}
+
+.menu-btn:hover {
+    background-color: #b98b5e; /* Hover rengi */
+    transform: translateY(-3px); /* Üzerine gelince hafif yükselir */
+}
+
+/* ---- FOOTER (ALT BİLGİ) ---- */
+footer {
+    text-align: center; /* Ortalar */
+    padding: 20px; /* İç boşluk */
+    background-color: #fff7e6; /* Açık krem arka plan */
+    border-top: 2px solid #e3c7a5; /* Üst sınır çizgisi */
+
+    bottom: 0; /* Alt kenara hizalar */
+    width: 100%; /* Tam genişlik */
+    font-size: 14px; /* Küçük yazı boyutu */
+}
+/* ---- MENÜ SAYFASI ---- */
+
+.menu-item img {
+    width: 100%;              /* Kart genişliğini tamamen kaplasın */
+    height: 200px;            /* Tüm resimler aynı yükseklikte olsun */
+    object-fit: cover;        /* Resmi orantılı kırparak çerçeveye sığdırır */
+    border-radius: 10px;      /* Köşeleri yuvarlat */
+    display: block;           /* Boşluk hatalarını engeller */
+}
+
+.menu-container {
+    text-align: center; /* Ortala */
+    padding: 50px 20px;
+}
+
+.menu-container h1 {
+    font-size: 40px; /* Başlık boyutu */
+    color: #4a3623;
+    margin-bottom: 10px;
+}
+
+.menu-container p {
+    font-size: 18px;
+    color: #6b4f3a;
+    margin-bottom: 40px;
+}
+
+.menu-grid {
+    display: grid; /* Izgara düzeni */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ekran genişliğine göre otomatik uyum */
+    gap: 30px; /* Kutular arası boşluk */
+    max-width: 1000px; /* Maksimum genişlik */
+    margin: auto;
+}
+
+.menu-item {
+    background-color: #fff7e6; /* Açık krem arka plan */
+    border-radius: 12px; /* Köşeleri yumuşat */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Hafif gölge efekti */
+    padding: 15px;
+    transition: transform 0.3s ease; /* Hover geçişi */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Üzerine gelince hafif yukarı kalkar */
+}
+
+.menu-item img {
+    width: 100%; /* Tam genişlikte resim */
+    border-radius: 10px; /* Köşeleri yuvarlat */
+}
+
+.menu-item h3 {
+    margin-top: 10px;
+    color: #3d2b1f;
+}
+
+.menu-item p {
+    font-size: 14px;
+    color: #6b4f3a;
+}
+
+/* ---- BİZE ULAŞIN SAYFASI ---- */
+.contact-container {
+    max-width: 600px; /* Sayfanın ortasında dar bir form alanı */
+    margin: 80px auto; /* Ortalar */
+    background-color: #fff7e6;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-container h1 {
+    color: #4a3623;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    color: #6b4f3a;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Dikey düzen */
+    gap: 15px;
+}
+
+label {
+    text-align: left; /* Etiketleri sola hizalar */
+    font-weight: 600;
+    color: #3d2b1f;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #d9b88f;
+    border-radius: 8px;
+    font-family: inherit;
+    resize: none;
+}
+
+button {
+    background-color: #d9b88f;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #b98b5e;
+    transform: translateY(-3px);
+}
